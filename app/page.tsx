@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { WhatWeOffer } from "./components/WhatWeOffer";
@@ -9,20 +8,17 @@ import { About } from "./components/About";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { BookingForm } from "./components/BookingForm";
 
 export default function Home() {
-  const [showBookingForm, setShowBookingForm] = useState(false);
-  const [selectedService, setSelectedService] = useState("");
-
   const handleBookingClick = (serviceType: string) => {
-    setSelectedService(serviceType);
-    setShowBookingForm(true);
-  };
+    const calendlyUrl =
+      process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com/";
+    const url = new URL(calendlyUrl);
 
-  const handleCloseBooking = () => {
-    setShowBookingForm(false);
-    setSelectedService("");
+    url.searchParams.set("utm_source", "neurodiverse-strategies");
+    url.searchParams.set("utm_content", serviceType);
+
+    window.open(url.toString(), "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -37,14 +33,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-
-      {showBookingForm && (
-        <BookingForm
-          serviceType={selectedService}
-          onClose={handleCloseBooking}
-        />
-      )}
     </div>
   );
 }
-
