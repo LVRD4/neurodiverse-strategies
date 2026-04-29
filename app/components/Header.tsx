@@ -16,12 +16,12 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-[#221da0]/15 z-50 shadow-sm">
+    <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b-2 border-[#78D047]/50 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <h1
-              className="text-2xl font-bold text-[#221da0] cursor-pointer"
+              className="text-2xl font-bold text-[#221da0] cursor-pointer decoration-[#78D047] decoration-4 underline-offset-4 hover:underline"
               onClick={() => scrollToSection("home")}
             >
               Neurodiverse Strategies
@@ -63,7 +63,7 @@ export function Header() {
 
           <div className="hidden md:block">
             <Button
-              className="bg-[#221da0] hover:bg-[#1b177f] text-white shadow-md"
+              className="bg-[#221da0] hover:bg-[#1b177f] text-white shadow-md ring-2 ring-[#78D047]/30"
               onClick={() => scrollToSection("contact")}
             >
               Get Started
@@ -112,7 +112,7 @@ export function Header() {
                 Contact
               </button>
               <Button
-                className="bg-[#221da0] hover:bg-[#1b177f] text-white w-full"
+                className="bg-[#221da0] hover:bg-[#1b177f] text-white w-full ring-2 ring-[#78D047]/30"
                 onClick={() => scrollToSection("contact")}
               >
                 Get Started
@@ -124,4 +124,3 @@ export function Header() {
     </header>
   );
 }
-

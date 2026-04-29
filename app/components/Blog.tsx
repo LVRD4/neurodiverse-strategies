@@ -104,8 +104,8 @@ export function Blog() {
                 key={index}
                 className={`px-4 py-2 rounded-full transition-colors ${
                   index === 0
-                    ? "bg-[#221da0] text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-[#eef0ff]"
+                    ? "bg-[#78D047] text-[#1a1a1a]"
+                    : "bg-gray-100 text-gray-700 hover:bg-[#78D047]/20"
                 }`}
               >
                 {category}
@@ -119,7 +119,7 @@ export function Blog() {
               .map((post) => (
                 <div
                   key={post.id}
-                  className="grid lg:grid-cols-2 gap-8 bg-gradient-to-br from-[#eef0ff] to-[#e8f8dc] rounded-3xl overflow-hidden p-8"
+                  className="grid lg:grid-cols-2 gap-8 bg-gradient-to-br from-[#eef0ff] to-[#e8f8dc] rounded-3xl overflow-hidden border border-[#78D047]/30 p-8"
                 >
                   <div className="relative rounded-xl overflow-hidden h-96">
                     <ImageWithFallback
@@ -201,7 +201,7 @@ export function Blog() {
           <div className="text-center mt-12">
             <Button
               variant="outline"
-              className="border-[#221da0] text-[#221da0] hover:bg-[#eef0ff]"
+              className="border-[#78D047] text-[#221da0] hover:bg-[#78D047]/20"
             >
               Load More Articles
             </Button>

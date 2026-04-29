@@ -20,7 +20,7 @@ export function Hero() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-block">
-                <span className="bg-[#221da0]/10 text-[#221da0] px-4 py-2 rounded-full text-sm font-semibold border border-[#221da0]/30">
+                <span className="bg-[#78D047]/15 text-[#221da0] px-4 py-2 rounded-full text-sm font-semibold border border-[#78D047]/50">
                   Workplace Transformation
                 </span>
               </div>
@@ -32,12 +32,12 @@ export function Hero() {
                   Up to 85% of neurodivergent employees won&apos;t keep their jobs,
                   and their companies are paying the price.
                 </p>
-                <div className="rounded-2xl border border-[#221da0]/15 bg-white/80 px-6 py-5 text-[#5a5a5a] shadow-sm">
+                <div className="rounded-2xl border border-[#78D047]/35 bg-white/80 px-6 py-5 text-[#5a5a5a] shadow-sm">
                   <h2 className="text-center text-xl font-semibold leading-tight text-[#1a1a1a]">
                     Here&apos;s what the research actually shows and what it&apos;s
                     costing companies:
                   </h2>
-                  <ul className="mt-5 list-disc space-y-2 pl-6 text-lg leading-relaxed marker:text-[#221da0]">
+                  <ul className="mt-5 list-disc space-y-2 pl-6 text-lg leading-relaxed marker:text-[#78D047]">
                     <li>
                       <strong className="font-semibold text-[#1a1a1a]">
                         $236 million. That&apos;s the annual cost of unaddressed
@@ -84,14 +84,14 @@ export function Hero() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
-                  className="bg-[#221da0] hover:bg-[#1b177f] text-white px-8 py-6 text-lg shadow-lg"
+                  className="bg-[#221da0] hover:bg-[#1b177f] text-white px-8 py-6 text-lg shadow-lg ring-2 ring-[#78D047]/30"
                   onClick={() => scrollToSection('what-we-offer')}
                 >
                   Explore Our Services
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-2 border-[#221da0] text-[#221da0] hover:bg-[#221da0] hover:text-white px-8 py-6 text-lg"
+                  className="border-2 border-[#78D047] text-[#221da0] hover:bg-[#78D047] hover:text-[#1a1a1a] px-8 py-6 text-lg"
                   onClick={() => scrollToSection('about')}
                 >
                   Learn More
@@ -99,15 +99,15 @@ export function Hero() {
               </div>
               <div className="flex gap-8 pt-6 border-t border-[#221da0]/10">
                 <div>
-                  <div className="text-3xl font-bold text-[#221da0]">500+</div>
+                  <div className="text-3xl font-bold text-[#78D047]">500+</div>
                   <div className="text-[#5a5a5a] text-sm">Organizations</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#221da0]">50K+</div>
+                  <div className="text-3xl font-bold text-[#78D047]">50K+</div>
                   <div className="text-[#5a5a5a] text-sm">Leaders Trained</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#221da0]">95%</div>
+                  <div className="text-3xl font-bold text-[#78D047]">95%</div>
                   <div className="text-[#5a5a5a] text-sm">
                     Client Satisfaction
                   </div>

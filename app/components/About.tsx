@@ -8,7 +8,7 @@ export function About() {
       <section id="about" className="py-24 bg-[#f7f8ff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#221da0] text-sm font-semibold uppercase tracking-wider mb-3">
+            <p className="text-[#78D047] text-sm font-semibold uppercase tracking-wider mb-3">
               About
             </p>
             <h2 className="text-4xl md:text-5xl text-[#1a1a1a] mb-6">
@@ -17,7 +17,7 @@ export function About() {
           </div>
 
           <div className="space-y-8">
-            <div className="rounded-2xl border border-[#221da0]/15 bg-white p-8 shadow-sm lg:p-10">
+            <div className="rounded-2xl border border-[#78D047]/35 bg-white p-8 shadow-sm lg:p-10">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#221da0] shadow-md">
                 <Building2 className="text-white" size={28} />
               </div>
@@ -32,7 +32,7 @@ export function About() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-[#221da0]/15 bg-white p-8 shadow-sm lg:p-10">
+            <div className="rounded-2xl border border-[#78D047]/35 bg-white p-8 shadow-sm lg:p-10">
               <div className="grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
                 <div>
                   <div className="mb-4 flex flex-wrap gap-3">

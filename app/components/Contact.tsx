@@ -62,12 +62,12 @@ export function Contact() {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Card className="border-[#221da0]/20 shadow-lg rounded-3xl">
+          <Card className="border-[#78D047]/40 shadow-lg rounded-3xl">
             <CardContent className="pt-6">
               {isSubmitted ? (
                 <div className="py-12 text-center">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="text-green-600" size={32} />
+                    <CheckCircle className="text-[#78D047]" size={32} />
                   </div>
                   <h3 className="text-2xl text-[#1a1a1a] mb-2">
                     You&apos;re Opted In!
@@ -117,7 +117,7 @@ export function Contact() {
                       required
                       value={formData.interest}
                       onChange={handleChange}
-                      className="mt-1 w-full px-3 py-2 border border-[#221da0]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#221da0] bg-white"
+                      className="mt-1 w-full px-3 py-2 border border-[#78D047]/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#221da0] bg-white"
                     >
                       <option value="newsletter">Newsletter</option>
                       <option value="video-series">Video Series</option>
@@ -143,7 +143,7 @@ export function Contact() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#221da0] hover:bg-[#1b177f] text-white py-6 shadow-md"
+                    className="w-full bg-[#221da0] hover:bg-[#1b177f] text-white py-6 shadow-md ring-2 ring-[#78D047]/30"
                   >
                     {isSubmitting ? (
                       <>

@@ -79,7 +79,7 @@ export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
       <section id="what-we-offer" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#221da0] text-sm font-semibold uppercase tracking-wider mb-3">
+            <p className="text-[#78D047] text-sm font-semibold uppercase tracking-wider mb-3">
               Services
             </p>
             <h2 className="text-4xl md:text-5xl text-[#1a1a1a] leading-[1.18] mb-6">
@@ -99,7 +99,7 @@ export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
               return (
                 <Card
                   key={service.serviceType}
-                  className="flex h-full flex-col rounded-2xl border-2 border-[#221da0]/10 bg-[#fbfbff] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#221da0]/30 hover:shadow-xl"
+                  className="flex h-full flex-col rounded-2xl border-2 border-[#78D047]/25 bg-[#fbfbff] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#78D047]/70 hover:shadow-xl"
                 >
                   <CardHeader>
                     <div
@@ -133,7 +133,7 @@ export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
                     <div className="mt-auto space-y-3">
                       <Button
                         onClick={() => onBookingClick(service.serviceType)}
-                        className="w-full bg-[#221da0] text-white shadow-md transition-all hover:bg-[#1b177f] hover:shadow-lg"
+                        className="w-full bg-[#221da0] text-white shadow-md ring-2 ring-[#78D047]/30 transition-all hover:bg-[#1b177f] hover:shadow-lg"
                       >
                         Book Discovery Call Now
                         <CalendarCheck className="ml-2" size={18} />
@@ -141,7 +141,7 @@ export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
                       <Button
                         variant="outline"
                         onClick={() => scrollToSection(service.detailId)}
-                        className="w-full border-2 border-[#221da0] text-[#221da0] transition-all hover:bg-[#221da0] hover:text-white"
+                        className="w-full border-2 border-[#78D047] text-[#221da0] transition-all hover:bg-[#78D047] hover:text-[#1a1a1a]"
                       >
                         Learn More
                         <ArrowRight className="ml-2" size={18} />
@@ -252,9 +252,9 @@ function ServiceDetail({
   return (
     <article
       id={id}
-      className="scroll-mt-28 rounded-2xl border border-[#221da0]/15 bg-gradient-to-br from-[#fbfbff] to-white p-8 shadow-sm md:p-10"
+      className="scroll-mt-28 rounded-2xl border border-[#78D047]/30 bg-gradient-to-br from-[#fbfbff] to-white p-8 shadow-sm md:p-10"
     >
-      <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#221da0]">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#78D047]">
         {eyebrow}
       </p>
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -265,7 +265,7 @@ function ServiceDetail({
           <p className="mt-5 text-lg leading-relaxed text-[#5a5a5a]">{intro}</p>
           <Button
             onClick={onBookingClick}
-            className="mt-7 bg-[#221da0] px-6 py-6 text-base text-white shadow-md hover:bg-[#1b177f]"
+            className="mt-7 bg-[#221da0] px-6 py-6 text-base text-white shadow-md ring-2 ring-[#78D047]/30 hover:bg-[#1b177f]"
           >
             Book Discovery Call Now
             <CalendarCheck className="ml-2" size={18} />
@@ -283,7 +283,7 @@ function ServiceDetail({
               </p>
             </div>
           ))}
-          <p className="border-l-4 border-[#221da0] pl-4 text-base leading-relaxed text-[#1a1a1a]">
+          <p className="border-l-4 border-[#78D047] pl-4 text-base leading-relaxed text-[#1a1a1a]">
             {closing}
           </p>
         </div>
