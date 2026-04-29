@@ -49,7 +49,7 @@ export function Testimonials() {
 
   return (
     <>
-      <section id="testimonials" className="py-20 bg-[#f3f6f4]">
+      <section id="testimonials" className="py-20 bg-[#f7f8ff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl text-[#1a1a1a] mb-4">
@@ -65,13 +65,13 @@ export function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all border-2 border-[#006666]/10"
+                className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all border-2 border-[#221da0]/10"
               >
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="text-[#660000] fill-[#660000]"
+                      className="text-[#FDD015] fill-[#FDD015]"
                       size={20}
                     />
                   ))}
@@ -79,7 +79,7 @@ export function Testimonials() {
                 <p className="text-[#5a5a5a] mb-6 italic">
                   &quot;{testimonial.content}&quot;
                 </p>
-                <div className="border-t border-[#006666]/10 pt-4">
+                <div className="border-t border-[#221da0]/10 pt-4">
                   <div className="text-[#1a1a1a] font-semibold">
                     {testimonial.name}
                   </div>
@@ -96,4 +96,3 @@ export function Testimonials() {
     </>
   );
 }
-

@@ -7,7 +7,6 @@ import {
   Calendar,
   Building2,
   Mail,
-  Phone,
   User,
 } from "lucide-react";
 import { Button } from "./ui/button";
@@ -46,6 +45,11 @@ export function BookingForm({ serviceType, onClose }: BookingFormProps) {
     audit: "Performance & Environment Analysis",
     coaching: "Neurodiversity Professional Development",
     courses: "Online Courses (Coming Soon)",
+    "coaching-intensive": "30-Day Coaching Intensive",
+    "assessment-development":
+      "Workplace Neurodiversity Assessment & Manager Development",
+    "assessment-development-coaching":
+      "Workplace Neurodiversity Assessment, Manager Development & 90-Day Coaching",
     consultation: "Strategy Conversation",
   };
 
@@ -78,8 +82,8 @@ export function BookingForm({ serviceType, onClose }: BookingFormProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 p-4 overflow-y-auto">
-      <Card className="w-full max-w-2xl mx-auto my-2 max-h-[calc(100dvh-1rem)] shadow-2xl border-2 border-[#006666]/30 rounded-3xl overflow-hidden flex flex-col">
-        <CardHeader className="relative bg-gradient-to-br from-[#006666] to-[#005555] text-white rounded-t-3xl">
+      <Card className="w-full max-w-2xl mx-auto my-2 max-h-[calc(100dvh-1rem)] shadow-2xl border-2 border-[#221da0]/30 rounded-3xl overflow-hidden flex flex-col">
+        <CardHeader className="relative bg-gradient-to-br from-[#221da0] to-[#1b177f] text-white rounded-t-3xl">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-white hover:bg-white/20 rounded-full p-2 transition-colors"
@@ -115,7 +119,7 @@ export function BookingForm({ serviceType, onClose }: BookingFormProps) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-[#006666] flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-[#221da0] flex items-center gap-2">
                   <User size={20} />
                   Personal Information
                 </h4>
@@ -181,7 +185,7 @@ export function BookingForm({ serviceType, onClose }: BookingFormProps) {
               </div>
 
               <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-[#006666] flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-[#221da0] flex items-center gap-2">
                   <Building2 size={20} />
                   Organization Details
                 </h4>
@@ -219,7 +223,7 @@ export function BookingForm({ serviceType, onClose }: BookingFormProps) {
               </div>
 
               <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-[#006666] flex items-center gap-2">
+                <h4 className="text-lg font-semibold text-[#221da0] flex items-center gap-2">
                   <Calendar size={20} />
                   Service Details
                 </h4>
@@ -252,11 +256,11 @@ export function BookingForm({ serviceType, onClose }: BookingFormProps) {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#006666]/20">
+              <div className="pt-4 border-t border-[#221da0]/20">
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#006666] hover:bg-[#005555] text-white py-6 text-lg shadow-md"
+                  className="w-full bg-[#221da0] hover:bg-[#1b177f] text-white py-6 text-lg shadow-md"
                 >
                   {isSubmitting ? (
                     <>

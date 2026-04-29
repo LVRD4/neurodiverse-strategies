@@ -3,7 +3,7 @@ interface CurvedDividerProps {
   flip?: boolean;
 }
 
-export function CurvedDivider({ color = "#006666", flip = false }: CurvedDividerProps) {
+export function CurvedDivider({ color = "#221da0", flip = false }: CurvedDividerProps) {
   return (
     <div className={`w-full overflow-hidden ${flip ? "rotate-180" : ""}`}>
       <svg

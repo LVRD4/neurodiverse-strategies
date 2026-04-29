@@ -12,7 +12,7 @@ export function Blog() {
         "Discover practical strategies to help children feel physically, emotionally, and socially secure in your classroom.",
       author: "Dr. Sarah Johnson",
       date: "December 15, 2024",
-      category: "Classroom Management",
+      category: "Neuroinclusive workspace",
       image:
         "https://images.unsplash.com/photo-1574130303188-31a915382726?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwY2hpbGRyZW4lMjBjbGFzc3Jvb218ZW58MXx8fHwxNzY2MjI3MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       featured: true,
@@ -24,7 +24,7 @@ export function Blog() {
         "Understanding brain development and how it impacts children's ability to manage their emotions.",
       author: "Michael Chen",
       date: "December 12, 2024",
-      category: "Brain Science",
+      category: "Neurodivergent",
       image:
         "https://images.unsplash.com/photo-1599081595468-de614fc93694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBsZWFybmluZ3xlbnwxfHx8fDE3NjYxODI2NjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       featured: false,
@@ -36,7 +36,7 @@ export function Blog() {
         "Learn how to create collaborative relationships with families that support children's development.",
       author: "Jennifer Martinez",
       date: "December 10, 2024",
-      category: "Family Engagement",
+      category: "ADHD - Autism - Executive Functioning",
       image:
         "https://images.unsplash.com/photo-1760205085646-2ce78b07c189?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJlbnQlMjBjaGlsZCUyMGNvbm5lY3Rpb258ZW58MXx8fHwxNzY2Mjc1OTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       featured: false,
@@ -48,7 +48,7 @@ export function Blog() {
         "Practical techniques for turning challenging behaviors into opportunities for growth and learning.",
       author: "Dr. Robert Williams",
       date: "December 8, 2024",
-      category: "Problem-Solving",
+      category: "Operational",
       image:
         "https://images.unsplash.com/photo-1716874905449-7881f6cf1c07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZWZ1bCUyMGNoaWxkfGVufDF8fHx8MTc2NjI3NTk1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       featured: false,
@@ -60,7 +60,7 @@ export function Blog() {
         "Age-appropriate activities and games that help children develop essential self-regulation skills.",
       author: "Lisa Anderson",
       date: "December 5, 2024",
-      category: "Activities",
+      category: "Neuroinclusive workspace",
       image:
         "https://images.unsplash.com/photo-1574130303188-31a915382726?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwY2hpbGRyZW4lMjBjbGFzc3Jvb218ZW58MXx8fHwxNzY2MjI3MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       featured: false,
@@ -72,7 +72,7 @@ export function Blog() {
         "Adapting Conscious Discipline principles for virtual classrooms and distance education.",
       author: "David Thompson",
       date: "December 1, 2024",
-      category: "Remote Learning",
+      category: "Neurodivergent",
       image:
         "https://images.unsplash.com/photo-1599081595468-de614fc93694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBsZWFybmluZ3xlbnwxfHx8fDE3NjYxODI2NjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       featured: false,
@@ -80,13 +80,10 @@ export function Blog() {
   ];
 
   const categories = [
-    "All Posts",
-    "Classroom Management",
-    "Brain Science",
-    "Family Engagement",
-    "Problem-Solving",
-    "Activities",
-    "Remote Learning",
+    "Neuroinclusive workspace",
+    "Neurodivergent",
+    "ADHD - Autism - Executive Functioning",
+    "Operational",
   ];
 
   return (
@@ -107,8 +104,8 @@ export function Blog() {
                 key={index}
                 className={`px-4 py-2 rounded-full transition-colors ${
                   index === 0
-                    ? "bg-[#006666] text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-[#d4e8e8]"
+                    ? "bg-[#221da0] text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-[#eef0ff]"
                 }`}
               >
                 {category}
@@ -122,7 +119,7 @@ export function Blog() {
               .map((post) => (
                 <div
                   key={post.id}
-                  className="grid lg:grid-cols-2 gap-8 bg-gradient-to-br from-[#d4e8e8] to-[#c6dfdf] rounded-3xl overflow-hidden p-8"
+                  className="grid lg:grid-cols-2 gap-8 bg-gradient-to-br from-[#eef0ff] to-[#e8f8dc] rounded-3xl overflow-hidden p-8"
                 >
                   <div className="relative rounded-xl overflow-hidden h-96">
                     <ImageWithFallback
@@ -131,14 +128,14 @@ export function Blog() {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-[#006666] text-white rounded-full text-sm">
+                      <span className="px-3 py-1 bg-[#f76201] text-white rounded-full text-sm">
                         Featured
                       </span>
                     </div>
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="flex items-center gap-2 text-sm text-[#5a5a5a] mb-4">
-                      <Tag size={16} className="text-[#006666]" />
+                      <Tag size={16} className="text-[#f76201]" />
                       <span>{post.category}</span>
                     </div>
                     <h3 className="text-3xl text-[#1a1a1a] mb-4">
@@ -157,7 +154,7 @@ export function Blog() {
                         <span>{post.date}</span>
                       </div>
                     </div>
-                    <Button className="bg-[#006666] hover:bg-[#005555] text-white w-fit">
+                    <Button className="bg-[#221da0] hover:bg-[#1b177f] text-white w-fit">
                       Read More <ArrowRight size={18} className="ml-2" />
                     </Button>
                   </div>
@@ -183,7 +180,7 @@ export function Blog() {
                       </span>
                     </div>
                   </div>
-                  <h3 className="text-xl text-[#1a1a1a] mb-2 group-hover:text-[#006666] transition-colors">
+                  <h3 className="text-xl text-[#1a1a1a] mb-2 group-hover:text-[#221da0] transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-[#5a5a5a] mb-4">{post.excerpt}</p>
@@ -204,15 +201,14 @@ export function Blog() {
           <div className="text-center mt-12">
             <Button
               variant="outline"
-              className="border-[#006666] text-[#006666] hover:bg-[#d4e8e8]"
+              className="border-[#221da0] text-[#221da0] hover:bg-[#eef0ff]"
             >
               Load More Articles
             </Button>
           </div>
         </div>
       </section>
-      <CurvedDivider color="#f3f6f4" />
+      <CurvedDivider color="#f7f8ff" />
     </>
   );
 }
-

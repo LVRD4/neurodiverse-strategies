@@ -8,8 +8,8 @@ export default async function AccessPage({ searchParams }: AccessPageProps) {
   const hasError = params?.error === "1";
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#f3f6f4] to-white flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-[#006666]/20 p-8">
+    <main className="min-h-screen bg-gradient-to-br from-[#f7f8ff] to-white flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-[#221da0]/20 p-8">
         <h1 className="text-2xl text-[#1a1a1a] font-semibold mb-2">
           Protected Site
         </h1>
@@ -18,7 +18,7 @@ export default async function AccessPage({ searchParams }: AccessPageProps) {
         </p>
 
         {hasError ? (
-          <p className="text-sm text-[#660000] mb-4">
+          <p className="text-sm text-[#f76201] mb-4">
             Incorrect password. Please try again.
           </p>
         ) : null}
@@ -37,14 +37,14 @@ export default async function AccessPage({ searchParams }: AccessPageProps) {
               name="password"
               type="password"
               required
-              className="w-full rounded-lg border border-[#006666]/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#006666]"
+              className="w-full rounded-lg border border-[#221da0]/30 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#221da0]"
               placeholder="Enter password"
               autoFocus
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-[#006666] hover:bg-[#005555] text-white rounded-lg py-2.5 transition-colors"
+            className="w-full bg-[#221da0] hover:bg-[#1b177f] text-white rounded-lg py-2.5 transition-colors"
           >
             Unlock Site
           </button>

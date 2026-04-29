@@ -1,10 +1,10 @@
 import {
-  Mic,
-  FileSearch,
-  Users,
-  Laptop,
   ArrowRight,
+  CalendarCheck,
   CheckCircle,
+  ClipboardCheck,
+  MessagesSquare,
+  Users,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -20,77 +20,55 @@ interface WhatWeOfferProps {
   onBookingClick: (serviceType: string) => void;
 }
 
-export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
-  const services = [
-    {
-      icon: Mic,
-      title: "Keynote Speaking",
-      description:
-        "Engaging, research-informed keynotes that reframe neurodiversity as a strategic advantage rather than a compliance issue.",
-      fullDescription:
-        "These talks move beyond awareness, equipping leaders and teams with a strategic perspective that strengthens execution, retention, and innovation.",
-      features: [
-        "Neurodiversity as Competitive Advantage",
-        "From Awareness to Organizational Impact",
-        "Performance Beyond Uniformity",
-        "Leading Across Cognitive Differences",
-      ],
-      actionText: "Book a Keynote",
-      serviceType: "keynote",
-    },
-    {
-      icon: FileSearch,
-      title: "Performance & Environment Analysis",
-      description:
-        "Our assessment evaluates how your organization supports and leverages neurodivergent talent across leadership, systems, and team dynamics.",
-      fullDescription:
-        "Through structured analysis and data-driven review, we identify barriers limiting performance and provide clear, actionable recommendations within a defined project timeline.",
-      features: [
-        "Leadership & Management Practices",
-        "Performance & Evaluation Systems",
-        "Team Collaboration & Peer Dynamics",
-        "Workplace & Sensory Environment",
-      ],
-      actionText: "Request an Assessment",
-      serviceType: "audit",
-    },
-    {
-      icon: Users,
-      title: "Neurodiversity Professional Development",
-      description:
-        "Targeted professional development for leaders and teams focused on supporting neurodivergent colleagues, strengthening communication, and improving day-to-day collaboration.",
-      fullDescription:
-        "Sessions are practical, actionable, and designed to translate directly into measurable workplace improvement.",
-      features: [
-        "Foundations of Neurodiversity",
-        "Leading Neurodivergent Talent for Performance",
-        "Designing Inclusive Work Environments",
-        "Inclusive communication strategies",
-      ],
-      actionText: "Explore Professional Development",
-      serviceType: "coaching",
-    },
-    {
-      icon: Laptop,
-      title: "Online Courses & Toolkits",
-      description:
-        "Scalable, self-paced digital learning resources that allow organizations to sustain neuroinclusive practices beyond live training engagements.",
-      fullDescription:
-        "Designed for long-term impact, onboarding, and leadership continuity.",
-      features: [
-        "Self-paced online modules",
-        "Implementation toolkits",
-        "Onboarding resources",
-        "Leadership continuity support",
-      ],
-      actionText: "Join Waitlist",
-      serviceType: "courses",
-      comingSoon: true,
-    },
-  ];
+const services = [
+  {
+    icon: MessagesSquare,
+    title: "30-Day Coaching Intensive",
+    serviceType: "coaching-intensive",
+    detailId: "coaching-intensive",
+    iconClassName: "bg-[#221da0]",
+    description:
+      "Focused, expert guidance for one challenge right now. For 30 days, you get direct access by phone, email, or Zoom, focused entirely on your situation.",
+    highlights: [
+      "Direct access with responses within 24 hours",
+      "Practical guidance rooted in real workplace experience",
+      "One flat fee. No hourly clock-watching.",
+    ],
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Workplace Neurodiversity Assessment & Manager Development",
+    serviceType: "assessment-development",
+    detailId: "assessment-development",
+    iconClassName: "bg-[#2485bd]",
+    description:
+      "You cannot train your way out of a problem you have not properly diagnosed. We start with assessment, then build workshops your managers actually need.",
+    highlights: [
+      "Confidential surveys, focus groups, and interviews",
+      "Real workplace data, not assumptions",
+      "Custom manager development workshops",
+    ],
+  },
+  {
+    icon: Users,
+    title:
+      "Workplace Neurodiversity Assessment, Manager Development & 90-Day Coaching",
+    serviceType: "assessment-development-coaching",
+    detailId: "assessment-development-coaching",
+    iconClassName: "bg-[#f76201]",
+    description:
+      "The full solution: assessment, custom training, and 90 days of direct coaching support to make sure the change actually sticks.",
+    highlights: [
+      "Assessment across all key stakeholders",
+      "Manager development built from your findings",
+      "90 days of follow-up coaching support",
+    ],
+  },
+];
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
+export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -100,120 +78,216 @@ export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
     <>
       <section id="what-we-offer" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-[#006666] text-sm font-semibold uppercase tracking-wider mb-3">
+          <div className="text-center mb-14">
+            <p className="text-[#221da0] text-sm font-semibold uppercase tracking-wider mb-3">
               Services
             </p>
-            <h2 className="text-4xl md:text-5xl text-[#1a1a1a] mb-6">
-              Practical Strategies to Strengthen Operational Performance
+            <h2 className="text-4xl md:text-5xl text-[#1a1a1a] leading-[1.18] mb-6">
+              Practical Support for Neuroinclusive Workplaces
             </h2>
             <p className="text-xl text-[#5a5a5a] max-w-4xl mx-auto leading-relaxed">
-              We work with leaders and teams to strengthen operational
-              performance in neurodiverse environments. Through keynote
-              presentations, workplace assessments, professional development,
-              and educational programs, we equip organizations to better
-              leverage neurodivergent talent and improve measurable results.
+              Choose the level of support that fits the challenge in front of
+              you, from focused coaching to full assessment, manager
+              development, and implementation support.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
-            {services.map((service, index) => {
+          <div className="grid gap-6 lg:grid-cols-3 mb-20">
+            {services.map((service) => {
               const Icon = service.icon;
+
               return (
                 <Card
-                  key={index}
-                  className="border-2 border-[#006666]/10 hover:border-[#006666]/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden group rounded-3xl"
+                  key={service.serviceType}
+                  className="flex h-full flex-col rounded-2xl border-2 border-[#221da0]/10 bg-[#fbfbff] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#221da0]/30 hover:shadow-xl"
                 >
-                  {service.comingSoon && (
-                    <div className="absolute top-6 right-6 z-10">
-                      <div className="bg-[#660000] text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-md">
-                        Coming Soon
-                      </div>
+                  <CardHeader>
+                    <div
+                      className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${service.iconClassName} shadow-md`}
+                    >
+                      <Icon className="text-white" size={28} />
                     </div>
-                  )}
-
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#006666]/5 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <CardHeader className="relative">
-                    <div className="w-16 h-16 rounded-xl bg-[#006666] flex items-center justify-center mb-5 shadow-lg">
-                      <Icon className="text-white" size={32} />
-                    </div>
-                    <CardTitle className="text-[#1a1a1a] text-2xl mb-3">
+                    <CardTitle className="text-2xl leading-tight text-[#1a1a1a]">
                       {service.title}
                     </CardTitle>
-                    <CardDescription className="text-[#5a5a5a] text-base leading-relaxed">
+                    <CardDescription className="text-base leading-relaxed text-[#5a5a5a]">
                       {service.description}
                     </CardDescription>
-                    <p className="text-[#5a5a5a] text-sm mt-3 leading-relaxed">
-                      {service.fullDescription}
-                    </p>
                   </CardHeader>
 
-                  <CardContent className="relative">
-                    <ul className="space-y-3 mb-6">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
+                  <CardContent className="flex flex-1 flex-col">
+                    <ul className="mb-8 space-y-3">
+                      {service.highlights.map((highlight) => (
+                        <li key={highlight} className="flex items-start gap-3">
                           <CheckCircle
-                            className="text-[#660000] mr-3 mt-0.5 flex-shrink-0"
+                            className="mt-0.5 flex-shrink-0 text-[#78D047]"
                             size={18}
                           />
-                          <span className="text-[#1a1a1a]">{feature}</span>
+                          <span className="text-sm leading-relaxed text-[#1a1a1a]">
+                            {highlight}
+                          </span>
                         </li>
                       ))}
                     </ul>
 
-                    <Button
-                      onClick={() =>
-                        service.comingSoon
-                          ? scrollToContact()
-                          : onBookingClick(service.serviceType)
-                      }
-                      className="w-full bg-[#006666] hover:bg-[#005555] text-white shadow-md hover:shadow-lg transition-all group/btn"
-                    >
-                      {service.actionText}
-                      <ArrowRight
-                        className="ml-2 group-hover/btn:translate-x-1 transition-transform"
-                        size={18}
-                      />
-                    </Button>
+                    <div className="mt-auto space-y-3">
+                      <Button
+                        onClick={() => onBookingClick(service.serviceType)}
+                        className="w-full bg-[#221da0] text-white shadow-md transition-all hover:bg-[#1b177f] hover:shadow-lg"
+                      >
+                        Book Discovery Call Now
+                        <CalendarCheck className="ml-2" size={18} />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        onClick={() => scrollToSection(service.detailId)}
+                        className="w-full border-2 border-[#221da0] text-[#221da0] transition-all hover:bg-[#221da0] hover:text-white"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2" size={18} />
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               );
             })}
           </div>
 
-          <div className="bg-gradient-to-br from-[#006666] to-[#005555] rounded-2xl p-12 md:p-16 text-center text-white shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#660000] rounded-full opacity-10 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#4a9999] rounded-full opacity-10 blur-3xl" />
+          <div className="space-y-8">
+            <ServiceDetail
+              id="coaching-intensive"
+              eyebrow="Focused support"
+              title="30-Day Coaching Intensive"
+              intro="Sometimes you do not need a lengthy engagement, you need focused, expert guidance on one challenge, right now. The 30-Day Coaching Intensive gives you direct, private access to an expert for a full month."
+              sections={[
+                {
+                  title: "How it works",
+                  body: "For 30 days, you can reach me by phone, email, or Zoom at mutually convenient times. No waiting weeks for a scheduled appointment. No hourly clock-watching. You have retained my expertise for the full interval, focused entirely on your situation.",
+                },
+                {
+                  title: "What is included",
+                  body: "Direct access with responses within 24 hours, candid evidence-based guidance rooted in real workplace experience, a clear focus on your specific challenge, a practical path forward, and complete confidentiality.",
+                },
+                {
+                  title: "Investment",
+                  body: "A single flat fee of $3500. Paid in advance. No surprises.",
+                },
+              ]}
+              closing="This is not a webinar. It is not a course. It is one-on-one support with someone who understands neurodiversity in the workplace from the inside out."
+              onBookingClick={() => onBookingClick("coaching-intensive")}
+            />
 
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl mb-4 font-bold">
-                Neuroinclusive environments drive measurable results.
-              </h3>
-              <p className="text-lg md:text-xl mb-10 opacity-95 max-w-3xl mx-auto">
-                Intentional alignment across leadership, teams, and workplace
-                systems strengthens execution and organizational outcomes.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="bg-white text-[#006666] hover:bg-[#f3f6f4] px-8 py-6 text-lg shadow-lg font-semibold"
-                  onClick={() => onBookingClick("consultation")}
-                >
-                  Request a Strategy Conversation
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold"
-                  onClick={scrollToContact}
-                >
-                  Contact Us
-                </Button>
-              </div>
-            </div>
+            <ServiceDetail
+              id="assessment-development"
+              eyebrow="Assessment and development"
+              title="Workplace Neurodiversity Assessment & Manager Development"
+              intro="Most organizations invest in diversity training before they truly understand what is happening in their own workplace. This engagement starts with listening, not assumptions."
+              sections={[
+                {
+                  title: "Phase 1: The Assessment",
+                  body: "We go directly to the source. Using confidential surveys, focus groups, and one-on-one interviews with employees, managers, and leadership, we build a clear, honest picture of how your workplace actually exists, not as it is assumed to be.",
+                },
+                {
+                  title: "Phase 2: Custom Manager Development Workshops",
+                  body: "Based solely on what the assessment reveals, we design and deliver professional development workshops built for your managers, your culture, and your specific challenges. No off-the-shelf content. No generic sensitivity training.",
+                },
+                {
+                  title: "Investment",
+                  body: "Every organization is different in size, complexity, and what the assessment uncovers. Investment is determined by the scope of the assessment, the number of stakeholders involved, and the depth of development work required.",
+                },
+              ]}
+              closing="What I can tell you is this: the cost of doing nothing, in turnover, lost productivity, legal exposure, and missed talent, is almost always far greater than the cost of getting it right."
+              onBookingClick={() => onBookingClick("assessment-development")}
+            />
+
+            <ServiceDetail
+              id="assessment-development-coaching"
+              eyebrow="Full engagement"
+              title="Workplace Neurodiversity Assessment, Manager Development & 90-Day Coaching"
+              intro="Most workplace initiatives fail not because the training was bad, but because nothing reinforced it afterward. This engagement is built differently."
+              sections={[
+                {
+                  title: "Phase 1: The Assessment",
+                  body: "We start by listening. Confidential surveys, focus groups, and one-on-one interviews across all stakeholders give us an honest, evidence-based picture of your workplace. Real data. No assumptions.",
+                },
+                {
+                  title: "Phase 2: Custom Manager Development Workshops",
+                  body: "Using only what the assessment reveals, we design and deliver professional development workshops built specifically for your managers and your culture. Practical, targeted, and immediately applicable.",
+                },
+                {
+                  title: "Phase 3: 90 Days of Coaching",
+                  body: "For 90 days following the workshops, your managers have direct access to me by phone, email, or Zoom. When a real situation arises, they do not have to guess. They have an expert in their corner, when it matters most.",
+                },
+              ]}
+              closing="This is the difference between a training event and lasting organizational change. It is designed for organizations serious about getting this right."
+              onBookingClick={() =>
+                onBookingClick("assessment-development-coaching")
+              }
+            />
           </div>
         </div>
       </section>
-      <CurvedDivider color="#f3f6f4" />
+      <CurvedDivider color="#f7f8ff" />
     </>
+  );
+}
+
+function ServiceDetail({
+  id,
+  eyebrow,
+  title,
+  intro,
+  sections,
+  closing,
+  onBookingClick,
+}: {
+  id: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  sections: { title: string; body: string }[];
+  closing: string;
+  onBookingClick: () => void;
+}) {
+  return (
+    <article
+      id={id}
+      className="scroll-mt-28 rounded-2xl border border-[#221da0]/15 bg-gradient-to-br from-[#fbfbff] to-white p-8 shadow-sm md:p-10"
+    >
+      <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#221da0]">
+        {eyebrow}
+      </p>
+      <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div>
+          <h3 className="text-3xl font-semibold leading-tight text-[#1a1a1a] md:text-4xl">
+            {title}
+          </h3>
+          <p className="mt-5 text-lg leading-relaxed text-[#5a5a5a]">{intro}</p>
+          <Button
+            onClick={onBookingClick}
+            className="mt-7 bg-[#221da0] px-6 py-6 text-base text-white shadow-md hover:bg-[#1b177f]"
+          >
+            Book Discovery Call Now
+            <CalendarCheck className="ml-2" size={18} />
+          </Button>
+        </div>
+
+        <div className="space-y-5">
+          {sections.map((section) => (
+            <div key={section.title}>
+              <h4 className="text-lg font-semibold text-[#1a1a1a]">
+                {section.title}
+              </h4>
+              <p className="mt-1 leading-relaxed text-[#5a5a5a]">
+                {section.body}
+              </p>
+            </div>
+          ))}
+          <p className="border-l-4 border-[#221da0] pl-4 text-base leading-relaxed text-[#1a1a1a]">
+            {closing}
+          </p>
+        </div>
+      </div>
+    </article>
   );
 }
