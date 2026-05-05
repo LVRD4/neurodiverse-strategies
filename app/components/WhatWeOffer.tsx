@@ -76,23 +76,23 @@ export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
 
   return (
     <>
-      <section id="what-we-offer" className="py-24 bg-white">
+      <section id="what-we-offer" className="py-16 bg-white sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="text-[#78D047] text-sm font-semibold uppercase tracking-wider mb-3">
               Services
             </p>
-            <h2 className="text-4xl md:text-5xl text-[#1a1a1a] leading-[1.18] mb-6">
+            <h2 className="text-3xl md:text-5xl text-[#1a1a1a] leading-[1.18] mb-4 sm:mb-6">
               Practical Support for Neuroinclusive Workplaces
             </h2>
-            <p className="text-xl text-[#5a5a5a] max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#5a5a5a] max-w-4xl mx-auto leading-relaxed sm:text-xl">
               Choose the level of support that fits the challenge in front of
               you, from focused coaching to full assessment, manager
               development, and implementation support.
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3 mb-20">
+          <div className="grid gap-5 lg:grid-cols-3 mb-14 sm:gap-6 sm:mb-20">
             {services.map((service) => {
               const Icon = service.icon;
 
@@ -107,7 +107,7 @@ export function WhatWeOffer({ onBookingClick }: WhatWeOfferProps) {
                     >
                       <Icon className="text-white" size={28} />
                     </div>
-                    <CardTitle className="text-2xl leading-tight text-[#1a1a1a]">
+                    <CardTitle className="text-xl leading-tight text-[#1a1a1a] sm:text-2xl">
                       {service.title}
                     </CardTitle>
                     <CardDescription className="text-base leading-relaxed text-[#5a5a5a]">
@@ -252,20 +252,20 @@ function ServiceDetail({
   return (
     <article
       id={id}
-      className="scroll-mt-28 rounded-2xl border border-[#78D047]/30 bg-gradient-to-br from-[#fbfbff] to-white p-8 shadow-sm md:p-10"
+      className="scroll-mt-24 rounded-2xl border border-[#78D047]/30 bg-gradient-to-br from-[#fbfbff] to-white p-5 shadow-sm sm:scroll-mt-28 sm:p-8 md:p-10"
     >
       <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#78D047]">
         {eyebrow}
       </p>
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <div>
-          <h3 className="text-3xl font-semibold leading-tight text-[#1a1a1a] md:text-4xl">
+          <h3 className="text-2xl font-semibold leading-tight text-[#1a1a1a] md:text-4xl">
             {title}
           </h3>
-          <p className="mt-5 text-lg leading-relaxed text-[#5a5a5a]">{intro}</p>
+          <p className="mt-4 text-base leading-relaxed text-[#5a5a5a] sm:mt-5 sm:text-lg">{intro}</p>
           <Button
             onClick={onBookingClick}
-            className="mt-7 bg-[#221da0] px-6 py-6 text-base text-white shadow-md ring-2 ring-[#78D047]/30 hover:bg-[#1b177f]"
+            className="mt-6 w-full bg-[#221da0] px-6 py-5 text-base text-white shadow-md ring-2 ring-[#78D047]/30 hover:bg-[#1b177f] sm:mt-7 sm:w-auto sm:py-6"
           >
             Book Discovery Call Now
             <CalendarCheck className="ml-2" size={18} />

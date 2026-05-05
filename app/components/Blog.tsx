@@ -104,21 +104,26 @@ export function Blog() {
 
   return (
     <>
-      <section id="blog" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl text-[#1a1a1a] mb-4">Blog & Resources</h2>
-            <p className="text-xl text-[#5a5a5a] max-w-3xl mx-auto">
+      <section
+        id="blog"
+        className="relative overflow-hidden bg-gradient-to-br from-[#221da0] via-[#2485bd] to-[#78D047] py-16 sm:py-20"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(253,208,21,0.42),transparent_28%),radial-gradient(circle_at_88%_14%,rgba(247,98,1,0.32),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.9),rgba(247,248,255,0.86))]" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-3xl text-[#1a1a1a] mb-4 sm:text-4xl">Blog & Resources</h2>
+            <p className="text-lg text-[#5a5a5a] max-w-3xl mx-auto sm:text-xl">
               Stay informed with the latest insights, research, and practical
               strategies for neuroinclusive workplaces.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3 mb-12 justify-center">
+          <div className="-mx-4 mb-10 flex gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:mb-12 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
             {categories.map((category, index) => (
               <button
                 key={category}
-                className={`px-4 py-2 rounded-full transition-colors ${
+                className={`shrink-0 px-4 py-2 rounded-full text-sm transition-colors ${
                   index === 0
                     ? "bg-[#78D047] text-[#1a1a1a]"
                     : "bg-gray-100 text-gray-700 hover:bg-[#78D047]/20"
@@ -129,18 +134,18 @@ export function Blog() {
             ))}
           </div>
 
-          <div className="mb-12">
+          <div className="mb-10 sm:mb-12">
             {posts
               .filter((post) => post.featured)
               .map((post) => (
                 <div
                   key={post.id}
-                  className="grid lg:grid-cols-2 gap-8 bg-gradient-to-br from-[#eef0ff] to-[#e8f8dc] rounded-3xl overflow-hidden border border-[#78D047]/30 p-8"
+                  className="grid gap-5 overflow-hidden rounded-2xl border border-[#78D047]/30 bg-gradient-to-br from-[#eef0ff] to-[#e8f8dc] p-4 sm:rounded-3xl sm:p-8 lg:grid-cols-2 lg:gap-8"
                 >
                   <button
                     type="button"
                     onClick={() => setSelectedPost(post)}
-                    className="relative rounded-xl overflow-hidden h-96 text-left"
+                    className="relative h-56 overflow-hidden rounded-xl text-left sm:h-96"
                   >
                     <ImageWithFallback
                       src={post.image}
@@ -158,13 +163,13 @@ export function Blog() {
                       <Tag size={16} className="text-[#f76201]" />
                       <span>{post.category}</span>
                     </div>
-                    <h3 className="text-3xl text-[#1a1a1a] mb-4">
+                    <h3 className="text-2xl text-[#1a1a1a] mb-3 sm:text-3xl sm:mb-4">
                       {post.title}
                     </h3>
-                    <p className="text-[#5a5a5a] mb-6 text-lg">
+                    <p className="text-[#5a5a5a] mb-5 text-base leading-relaxed sm:mb-6 sm:text-lg">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center gap-4 text-[#5a5a5a] mb-6">
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-[#5a5a5a] mb-5 sm:gap-4 sm:text-base sm:mb-6">
                       <div className="flex items-center gap-2">
                         <User size={16} />
                         <span>{post.author}</span>
@@ -185,7 +190,7 @@ export function Blog() {
               ))}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {posts
               .filter((post) => !post.featured)
               .map((post) => (
@@ -195,7 +200,7 @@ export function Blog() {
                   onClick={() => setSelectedPost(post)}
                   className="group cursor-pointer text-left"
                 >
-                  <div className="relative rounded-xl overflow-hidden mb-4 h-64">
+                  <div className="relative rounded-xl overflow-hidden mb-4 h-52 sm:h-64">
                     <ImageWithFallback
                       src={post.image}
                       alt={post.title}
@@ -208,11 +213,11 @@ export function Blog() {
                       </span>
                     </div>
                   </div>
-                  <h3 className="text-xl text-[#1a1a1a] mb-2 group-hover:text-[#221da0] transition-colors">
+                  <h3 className="text-lg text-[#1a1a1a] mb-2 group-hover:text-[#221da0] transition-colors sm:text-xl">
                     {post.title}
                   </h3>
-                  <p className="text-[#5a5a5a] mb-4">{post.excerpt}</p>
-                  <div className="flex items-center gap-4 text-sm text-[#5a5a5a]">
+                  <p className="text-sm leading-relaxed text-[#5a5a5a] mb-4 sm:text-base">{post.excerpt}</p>
+                  <div className="flex flex-wrap items-center gap-3 text-sm text-[#5a5a5a] sm:gap-4">
                     <div className="flex items-center gap-1">
                       <User size={14} />
                       <span>{post.author}</span>
@@ -226,8 +231,8 @@ export function Blog() {
               ))}
           </div>
 
-          <div className="mt-16 rounded-3xl border border-[#78D047]/40 bg-[#f7f8ff] p-8 shadow-sm md:p-10">
-            <div className="grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+          <div className="mt-12 rounded-2xl border border-[#78D047]/40 bg-[#f7f8ff] p-5 shadow-sm sm:mt-16 sm:rounded-3xl sm:p-8 md:p-10">
+            <div className="grid gap-5 md:grid-cols-[auto_1fr_auto] md:items-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#221da0]">
                 <FileText className="text-white" size={30} />
               </div>
@@ -254,8 +259,8 @@ export function Blog() {
         </div>
       </section>
       {selectedPost ? (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 p-4 backdrop-blur-sm">
-          <article className="relative mx-auto my-8 max-w-4xl overflow-hidden rounded-3xl bg-white shadow-2xl">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 p-2 backdrop-blur-sm sm:p-4">
+          <article className="relative mx-auto my-4 max-w-4xl overflow-hidden rounded-2xl bg-white shadow-2xl sm:my-8 sm:rounded-3xl">
             <button
               type="button"
               onClick={() => setSelectedPost(null)}
@@ -264,15 +269,15 @@ export function Blog() {
             >
               <X size={24} />
             </button>
-            <div className="h-80 overflow-hidden">
+            <div className="h-52 overflow-hidden sm:h-80">
               <ImageWithFallback
                 src={selectedPost.image}
                 alt={selectedPost.title}
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="p-8 md:p-10">
-              <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-[#5a5a5a]">
+            <div className="p-5 sm:p-8 md:p-10">
+              <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-[#5a5a5a] sm:gap-4">
                 <span className="rounded-full bg-[#78D047]/20 px-3 py-1 font-medium text-[#221da0]">
                   {selectedPost.category}
                 </span>
@@ -285,10 +290,10 @@ export function Blog() {
                   {selectedPost.author}
                 </span>
               </div>
-              <h3 className="text-3xl font-semibold leading-tight text-[#1a1a1a] md:text-4xl">
+              <h3 className="text-2xl font-semibold leading-tight text-[#1a1a1a] md:text-4xl">
                 {selectedPost.title}
               </h3>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#5a5a5a]">
+              <div className="mt-5 space-y-4 text-base leading-relaxed text-[#5a5a5a] sm:mt-6 sm:text-lg">
                 <p>{selectedPost.excerpt}</p>
                 <p>
                   This article is being prepared for publication. In the

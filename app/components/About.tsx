@@ -5,26 +5,26 @@ import { CurvedDivider } from './CurvedDivider';
 export function About() {
   return (
     <>
-      <section id="about" className="py-24 bg-[#f7f8ff]">
+      <section id="about" className="py-16 bg-[#f7f8ff] sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="text-[#78D047] text-sm font-semibold uppercase tracking-wider mb-3">
               About
             </p>
-            <h2 className="text-4xl md:text-5xl text-[#1a1a1a] mb-6">
+            <h2 className="text-3xl md:text-5xl text-[#1a1a1a] mb-4 sm:mb-6">
               About Neurodiverse Strategies
             </h2>
           </div>
 
           <div className="space-y-8">
-            <div className="rounded-2xl border border-[#78D047]/35 bg-white p-8 shadow-sm lg:p-10">
+            <div className="rounded-2xl border border-[#78D047]/35 bg-white p-5 shadow-sm sm:p-8 lg:p-10">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#221da0] shadow-md">
                 <Building2 className="text-white" size={28} />
               </div>
-              <h3 className="text-3xl font-semibold text-[#1a1a1a]">
+              <h3 className="text-2xl font-semibold text-[#1a1a1a] sm:text-3xl">
                 What We Do
               </h3>
-              <p className="mt-5 text-lg leading-relaxed text-[#5a5a5a]">
+              <p className="mt-4 text-base leading-relaxed text-[#5a5a5a] sm:mt-5 sm:text-lg">
                 We help organizations reduce costly turnover, equip managers
                 with the skills they&apos;re missing, and build the kind of
                 inclusive workplace where neurodivergent employees, who make up
@@ -32,7 +32,7 @@ export function About() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-[#78D047]/35 bg-white p-8 shadow-sm lg:p-10">
+            <div className="rounded-2xl border border-[#78D047]/35 bg-white p-5 shadow-sm sm:p-8 lg:p-10">
               <div className="grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
                 <div>
                   <div className="mb-4 flex flex-wrap gap-3">
@@ -43,10 +43,10 @@ export function About() {
                       <Award className="text-[#78D047]" size={24} />
                     </div>
                   </div>
-                  <h3 className="text-3xl font-semibold text-[#1a1a1a]">
+                  <h3 className="text-2xl font-semibold text-[#1a1a1a] sm:text-3xl">
                     Meet Dr. Karen Lynne, CEO and Founder
                   </h3>
-                  <div className="mt-5 space-y-4 text-lg leading-relaxed text-[#5a5a5a]">
+                  <div className="mt-4 space-y-4 text-base leading-relaxed text-[#5a5a5a] sm:mt-5 sm:text-lg">
                     <p>
                       With over 30 years of experience, Dr. Karen Lynne is an
                       organizational strategist and founder of Neurodiverse

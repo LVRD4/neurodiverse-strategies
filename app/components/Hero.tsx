@@ -13,7 +13,7 @@ export function Hero() {
     <>
       <section
         id="home"
-        className="relative overflow-hidden bg-cover bg-center py-20 lg:py-32"
+        className="relative overflow-hidden bg-cover bg-center py-14 sm:py-20 lg:py-32"
         style={{ backgroundImage: "url('/cover-photo.png')" }}
       >
         <div className="absolute inset-0 bg-[#1a1a1a]/65" />
@@ -26,20 +26,20 @@ export function Hero() {
                   Workplace Transformation
                 </span>
               </div>
-              <h1 className="text-5xl lg:text-6xl text-white leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
                 Employee Turnover is Costing You More Than You Think
               </h1>
               <div className="space-y-3">
-                <p className="text-xl text-white/90 leading-relaxed">
+                <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
                   Up to 85% of neurodivergent employees won&apos;t keep their jobs,
                   and their companies are paying the price.
                 </p>
-                <div className="rounded-2xl border border-[#78D047]/50 bg-white/90 px-6 py-5 text-[#5a5a5a] shadow-xl backdrop-blur-sm">
-                  <h2 className="text-center text-xl font-semibold leading-tight text-[#1a1a1a]">
+                <div className="rounded-2xl border border-[#78D047]/50 bg-white/90 px-4 py-4 text-[#5a5a5a] shadow-xl backdrop-blur-sm sm:px-6 sm:py-5">
+                  <h2 className="text-left text-lg font-semibold leading-snug text-[#1a1a1a] sm:text-center sm:text-xl">
                     Here&apos;s what the research actually shows and what it&apos;s
                     costing companies:
                   </h2>
-                  <ul className="mt-5 list-disc space-y-2 pl-6 text-lg leading-relaxed marker:text-[#78D047]">
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed marker:text-[#78D047] sm:mt-5 sm:pl-6 sm:text-lg">
                     <li>
                       <strong className="font-semibold text-[#1a1a1a]">
                         $236 million. That&apos;s the annual cost of unaddressed
@@ -77,39 +77,39 @@ export function Hero() {
                       is 50% – 200% of their annual salary
                     </li>
                   </ul>
-                  <p className="mt-8 text-sm leading-relaxed text-[#5a5a5a]">
+                  <p className="mt-5 text-xs leading-relaxed text-[#5a5a5a] sm:mt-8 sm:text-sm">
                     Sources: National Institutes of Health | CNBC (Caminiti,
                     2022) | Colorado Neurodiversity Chamber of Commerce |
                     JPMorgan Chase | Rollnik-Sadowska &amp; Grabinska (2024)
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:gap-4 sm:pt-4">
                 <Button
-                  className="bg-[#78D047] hover:bg-[#6abd3f] text-[#1a1a1a] px-8 py-6 text-lg shadow-lg"
+                  className="bg-[#78D047] hover:bg-[#6abd3f] text-[#1a1a1a] px-6 py-5 text-base shadow-lg sm:px-8 sm:py-6 sm:text-lg"
                   onClick={() => scrollToSection('what-we-offer')}
                 >
                   Explore Our Services
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#221da0] px-8 py-6 text-lg"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#221da0] px-6 py-5 text-base sm:px-8 sm:py-6 sm:text-lg"
                   onClick={() => scrollToSection('about')}
                 >
                   Learn More
                 </Button>
               </div>
-              <div className="flex gap-8 pt-6 border-t border-white/20">
+              <div className="grid grid-cols-3 gap-3 pt-5 border-t border-white/20 sm:flex sm:gap-8 sm:pt-6">
                 <div>
-                  <div className="text-3xl font-bold text-[#78D047]">500+</div>
+                  <div className="text-2xl font-bold text-[#78D047] sm:text-3xl">500+</div>
                   <div className="text-white/80 text-sm">Organizations</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#78D047]">50K+</div>
+                  <div className="text-2xl font-bold text-[#78D047] sm:text-3xl">50K+</div>
                   <div className="text-white/80 text-sm">Leaders Trained</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#78D047]">95%</div>
+                  <div className="text-2xl font-bold text-[#78D047] sm:text-3xl">95%</div>
                   <div className="text-white/80 text-sm">
                     Client Satisfaction
                   </div>
