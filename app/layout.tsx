@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Neurodiverse Strategies – Neuroinclusive Workplace Consulting",
+  title: "Neurodiverse Strategies | Neuroinclusive Workplace Consulting",
   description:
-    "Neurodiverse Strategies partners with organizations to design, implement, and sustain neuroinclusive workplace cultures through evidence-based consulting, audits, and leadership development.",
+    "Neurodiverse Strategies helps organizations reduce turnover, improve employee performance, and build neuroinclusive workplaces through consulting, assessments, professional development, and educational programs.",
 };
 
 export default function RootLayout({
@@ -26,4 +26,3 @@ export default function RootLayout({
     </html>
   );
 }
-

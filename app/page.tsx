@@ -2,6 +2,7 @@
 
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { ProblemSection, SolutionSection } from "./components/ProblemSolution";
 import { WhatWeOffer } from "./components/WhatWeOffer";
 import { Blog } from "./components/Blog";
 import { About } from "./components/About";
@@ -26,10 +27,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <ProblemSection />
+        <SolutionSection />
         <WhatWeOffer onBookingClick={handleBookingClick} />
-        <Blog />
         <About />
         <Testimonials />
+        <Blog />
         <Contact />
       </main>
       <Footer />

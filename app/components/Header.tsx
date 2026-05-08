@@ -20,12 +20,13 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <h1
-              className="text-2xl font-bold text-[#221da0] cursor-pointer decoration-[#78D047] decoration-4 underline-offset-4 hover:underline"
+            <button
+              type="button"
+              className="text-left text-2xl font-bold text-[#221da0] cursor-pointer decoration-[#78D047] decoration-4 underline-offset-4 hover:underline"
               onClick={() => scrollToSection("home")}
             >
               Neurodiverse Strategies
-            </h1>
+            </button>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -42,16 +43,22 @@ export function Header() {
               What We Offer
             </button>
             <button
-              onClick={() => scrollToSection("blog")}
-              className="text-[#1a1a1a] hover:text-[#221da0] transition-colors font-medium"
-            >
-              Blog
-            </button>
-            <button
               onClick={() => scrollToSection("about")}
               className="text-[#1a1a1a] hover:text-[#221da0] transition-colors font-medium"
             >
               About
+            </button>
+            <button
+              onClick={() => scrollToSection("testimonials")}
+              className="text-[#1a1a1a] hover:text-[#221da0] transition-colors font-medium"
+            >
+              Testimonials
+            </button>
+            <button
+              onClick={() => scrollToSection("blog")}
+              className="text-[#1a1a1a] hover:text-[#221da0] transition-colors font-medium"
+            >
+              Blog
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -94,16 +101,22 @@ export function Header() {
                 What We Offer
               </button>
               <button
-                onClick={() => scrollToSection("blog")}
-                className="text-[#1a1a1a] hover:text-[#221da0] transition-colors text-left font-medium"
-              >
-                Blog
-              </button>
-              <button
                 onClick={() => scrollToSection("about")}
                 className="text-[#1a1a1a] hover:text-[#221da0] transition-colors text-left font-medium"
               >
                 About
+              </button>
+              <button
+                onClick={() => scrollToSection("testimonials")}
+                className="text-[#1a1a1a] hover:text-[#221da0] transition-colors text-left font-medium"
+              >
+                Testimonials
+              </button>
+              <button
+                onClick={() => scrollToSection("blog")}
+                className="text-[#1a1a1a] hover:text-[#221da0] transition-colors text-left font-medium"
+              >
+                Blog
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
